@@ -28,6 +28,11 @@ cd projects
 git clone https://github.com/eurecom-s3/news2e
 mkdir news2e-build
 ( cd news2e-build && make -f ../news2e/Makefile )
+# There is a bug in compiler-rt which reports a missing features.h.
+# Weirdly enough, it's simply enough to restart the build.
+( cd news2e-build/llvm-native && make )
+( cd news2e-build && make -f ../news2e/Makefile )
+
 
 
 
