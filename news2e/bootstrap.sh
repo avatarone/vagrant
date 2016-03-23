@@ -32,6 +32,8 @@ mkdir news2e-build
 # Weirdly enough, it's simply enough to restart the build.
 ( cd news2e-build/llvm-native && make )
 ( cd news2e-build && make -f ../news2e/Makefile )
+# The test repository does not check out through the build script
+( cd news2e && git submodule update --init test )
 
 
 
