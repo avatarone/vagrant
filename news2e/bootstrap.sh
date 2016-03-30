@@ -23,6 +23,36 @@ cat - <<EOF > .gitconfig
     rebase = true
 EOF
 
+cat - <<EOF > .vimrc
+" Do syntax coloring and smart indentation 
+syntax on
+set smartindent
+
+" per default put 4 spaces instead of tab 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Make backspace work sanely
+set backspace=indent,eol,start
+
+" enable mouse scrolling and tab clicking
+set mouse=a
+
+" A better color scheme
+:colorscheme desert
+
+" Makefiles do not like tab expansion
+:autocmd FileType make set noexpandtab
+
+" enable history
+set history=1000
+
+" enable spell checking
+" set spell
+EOF
+
 mkdir projects
 cd projects
 
