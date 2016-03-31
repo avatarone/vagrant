@@ -53,6 +53,11 @@ set history=1000
 " set spell
 EOF
 
+#shared
+BASEDIR=/vagrant/
+#local only
+BASEDIR=/home/vagrant/
+
 mkdir projects
 cd projects
 
