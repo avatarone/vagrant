@@ -2,7 +2,7 @@
 
 add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
 apt-get update
-apt-get install -y git binutils-dev gettext flex bison pkg-config \
+apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
     libglib2.0-dev nasm liblua5.1-0-dev libsigc++-2.0-dev \
     texinfo gcc-arm-embedded expat libexpat1-dev python2.7-dev \
     
@@ -23,7 +23,20 @@ mkdir projects
         ../gdb/configure --with-python --with-expat=yes --target=arm-none-eabi
         make -j4
     )
-    git clone --branch master https://github.com/eurecom-s3/avatar-python
+    
+    # Install Python3 and dependencies
+    sudo apt-get install -y python3 python3-setuptools
+    # pip version < 8 required for Python 3.2
+    wget https://github.com/pypa/pip/archive/7.1.2.tar.gz
+    tar -xzf 7.1.2.tar.gz
+    cd pip-7.1.2/
+    sudo python3 setup.py install
+    cd ..
+    
+    # Download Avatar and Avatar samples
+    git clone --branch master https://github.com/eurecom-s3/avatar-python   
+    sudo pip3.2 install git+https://github.com/eurecom-s3/avatar-python.git#egg=avatar
     git clone --branch master https://github.com/eurecom-s3/avatar-samples
+
     git clone --branch eurecom/wip https://github.com/eurecom-s3/openocd
 )

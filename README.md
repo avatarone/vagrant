@@ -13,7 +13,7 @@ There are currenlty two supported systems:
 
 ## Quickstart
 Cd to the folder of your choice (avatar or news2e) and start the
-virtual machine with `vagrant --provider virtualbox up`, connect to it
+virtual machine with `vagrant up --provider=virtualbox`, connect to it
 via `vagrant ssh -- -A` (-A is for agent forwarding, so that you can
 directly commit to Github using your SSH key).
 
