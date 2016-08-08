@@ -1,12 +1,11 @@
 #!/bin/sh
 
-add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
-apt-get update
-apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
+sudo add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
+sudo apt-get update
+sudo apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
     libglib2.0-dev nasm liblua5.1-0-dev libsigc++-2.0-dev \
     texinfo gcc-arm-embedded expat libexpat1-dev python2.7-dev \
     
-su - vagrant    
 mkdir projects
 (
     cd projects 
