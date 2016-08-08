@@ -6,7 +6,8 @@ sudo apt-get install -y git clang binutils-dev vim \
     libiberty-dev zlib1g-dev libgettextpo-dev \
     flex bison pkg-config libglib2.0-dev liblua5.1-0-dev \
     libpixman-1-dev libfdt-dev gcc-arm-embedded \
-    ruby-aruba cucumber ctags libc6-dev-i386 gdb
+    ruby-aruba cucumber ctags libc6-dev-i386 gdb \
+    cmake
 
 cat - <<EOF > .gitconfig
 [alias]
