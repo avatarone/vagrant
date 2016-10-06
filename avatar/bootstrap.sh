@@ -1,11 +1,10 @@
 #!/bin/sh
 
-sudo add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
 sudo apt-get update
 sudo apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
     libglib2.0-dev nasm liblua5.1-0-dev libsigc++-2.0-dev \
-    texinfo gcc-arm-embedded expat libexpat1-dev python2.7-dev \
-    
+    texinfo  expat libexpat1-dev python2.7-dev \
+    automake libusb-1.0-0-dev g++ 
 mkdir projects
 (
     cd projects 
@@ -31,6 +30,7 @@ mkdir projects
     cd pip-7.1.2/
     sudo python3 setup.py install
     cd ..
+    sudo pip install future
     
     # Download Avatar and Avatar samples
     git clone --branch master https://github.com/eurecom-s3/avatar-python   
@@ -38,4 +38,11 @@ mkdir projects
     git clone --branch master https://github.com/eurecom-s3/avatar-samples
 
     git clone --branch eurecom/wip https://github.com/eurecom-s3/openocd
+    (
+        cd openocd
+        ./bootstrap
+        ./configure
+        make
+        sudo make install
+    )
 )
