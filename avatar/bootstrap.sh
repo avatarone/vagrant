@@ -1,10 +1,12 @@
 #!/bin/sh
 
+sudo apt-get install -y software-properties-common python-software-properties
+sudo add-apt-repository -y ppa:team-gcc-arm-embedded/ppa 
 sudo apt-get update
 sudo apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
     libglib2.0-dev nasm liblua5.1-0-dev libsigc++-2.0-dev \
     texinfo  expat libexpat1-dev python2.7-dev \
-    automake g++ libusb-1.0-0-dev
+    automake g++ libusb-1.0-0-dev gcc-arm-embedded
 mkdir projects
 (
     cd projects 
