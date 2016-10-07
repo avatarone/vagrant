@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get install -y git subversion binutils-dev gettext flex bison pkg-config \
     libglib2.0-dev nasm liblua5.1-0-dev libsigc++-2.0-dev \
     texinfo  expat libexpat1-dev python2.7-dev \
-    automake libusb-1.0-0-dev g++ 
+    automake g++ libusb-1.0-0-dev
 mkdir projects
 (
     cd projects 
